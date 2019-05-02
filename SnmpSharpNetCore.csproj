@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>SnmpSharpNet_1</RootNamespace>
+    <Description>dotNet Simple Network Management Protocol Implementation</Description>
+    <Company>Milan Sinadinovic</Company>
+    <Copyright>Copyright © Milan Sinadinovic 2008 - 2014</Copyright>
+    <Version>0.0.1</Version>
+    <Authors>Milan Sinadinovic, Darren R. Starr</Authors>
+    <PackageReleaseNotes>Initial version while developing dotnet core support</PackageReleaseNotes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+
+</Project>

@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnmpSharpNet", "SnmpSharpNet.csproj", "{8E150D42-5D05-40F8-A388-C3A55EB4A141}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SnmpSharpNetCore", "SnmpSharpNetCore.csproj", "{FDCF3B79-39A8-4891-94DC-3364AFBCE9CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +17,15 @@ Global
 		{8E150D42-5D05-40F8-A388-C3A55EB4A141}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E150D42-5D05-40F8-A388-C3A55EB4A141}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E150D42-5D05-40F8-A388-C3A55EB4A141}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDCF3B79-39A8-4891-94DC-3364AFBCE9CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDCF3B79-39A8-4891-94DC-3364AFBCE9CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDCF3B79-39A8-4891-94DC-3364AFBCE9CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDCF3B79-39A8-4891-94DC-3364AFBCE9CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8EEC8903-1C9C-4B12-A53B-2BFC40662C7F}
 	EndGlobalSection
 EndGlobal
