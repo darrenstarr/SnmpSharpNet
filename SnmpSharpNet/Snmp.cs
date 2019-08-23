@@ -9,7 +9,7 @@ namespace SnmpSharpNet
 		/// <summary>
 		/// Internal event to send result of the async request to.
 		/// </summary>
-		protected event SnmpAsyncResponse _response = null;
+		protected event SnmpAsyncResponse _response;
 
 		/// <summary>
 		/// Internal storage for request target information.
