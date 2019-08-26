@@ -16,48 +16,48 @@
 
 namespace SnmpSharpNet
 {
-	/// <summary>Snmp V2 <see cref="Pdu.ErrorStatus" /> error values</summary>
-	public enum SnmpV2PduErrorStatus: int
-	{
-		/// <summary>Unknown error code received.</summary>
-		Unknown = -1,
-		/// <summary>No error</summary>
-		NoError = 0,
-		/// <summary>Request too big</summary>
-		TooBig = 1,
-		/// <summary>Object identifier does not exist</summary>
-		NoSuchName = 2,
-		/// <summary>Invalid value</summary>
-		BadValue = 3,
-		/// <summary>Requested invalid operation on a read only table</summary>
-		ReadOnly = 4,
-		/// <summary>Generic error</summary>
-		GenError = 5,
-		/// <summary>Access denied</summary>
-		NoAccess = 6,
-		/// <summary>Incorrect type</summary>
-		WrongType = 7,
-		/// <summary>Incorrect length</summary>
-		WrongLength = 8,
-		/// <summary>Invalid encoding</summary>
-		WrongEncoding = 9,
-		/// <summary>Object does not have correct value</summary>
-		WrongValue = 10,
-		/// <summary>Insufficient rights to perform create operation</summary>
-		NoCreation = 11,
-		/// <summary>Inconsistent value</summary>
-		InconsistentValue = 12,
-		/// <summary>Requested resource is not available</summary>
-		ResourceUnavailable = 13,
-		/// <summary>Unable to commit values</summary>
-		CommitFailed = 14,
-		/// <summary>Undo request failed</summary>
-		UndoFailed = 15,
-		/// <summary>Authorization failed</summary>
-		AuthorizationError = 16,
-		/// <summary>Instance not writable</summary>
-		NotWritable = 17,
-		/// <summary>Inconsistent object identifier</summary>
-		InconsistentName = 18
-	}
+    /// <summary>Snmp V2 <see cref="Pdu.ErrorStatus" /> error values</summary>
+    public enum SnmpV2PduErrorStatus : int
+    {
+        /// <summary>Unknown error code received.</summary>
+        Unknown = -1,
+        /// <summary>No error</summary>
+        NoError = 0,
+        /// <summary>Request too big</summary>
+        TooBig = 1,
+        /// <summary>Object identifier does not exist</summary>
+        NoSuchName = 2,
+        /// <summary>Invalid value</summary>
+        BadValue = 3,
+        /// <summary>Requested invalid operation on a read only table</summary>
+        ReadOnly = 4,
+        /// <summary>Generic error</summary>
+        GenError = 5,
+        /// <summary>Access denied</summary>
+        NoAccess = 6,
+        /// <summary>Incorrect type</summary>
+        WrongType = 7,
+        /// <summary>Incorrect length</summary>
+        WrongLength = 8,
+        /// <summary>Invalid encoding</summary>
+        WrongEncoding = 9,
+        /// <summary>Object does not have correct value</summary>
+        WrongValue = 10,
+        /// <summary>Insufficient rights to perform create operation</summary>
+        NoCreation = 11,
+        /// <summary>Inconsistent value</summary>
+        InconsistentValue = 12,
+        /// <summary>Requested resource is not available</summary>
+        ResourceUnavailable = 13,
+        /// <summary>Unable to commit values</summary>
+        CommitFailed = 14,
+        /// <summary>Undo request failed</summary>
+        UndoFailed = 15,
+        /// <summary>Authorization failed</summary>
+        AuthorizationError = 16,
+        /// <summary>Instance not writable</summary>
+        NotWritable = 17,
+        /// <summary>Inconsistent object identifier</summary>
+        InconsistentName = 18
+    }
 }

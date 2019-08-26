@@ -16,35 +16,35 @@
 
 namespace SnmpSharpNet
 {
-	/// <summary>
-	/// Every agent parameters class implements this interface
-	/// </summary>
-	public interface IAgentParameters
-	{
-		/// <summary>
-		/// Get SNMP version number.
-		/// </summary>
-		SnmpVersion Version
-		{
-			get;
-		}
+    /// <summary>
+    /// Every agent parameters class implements this interface
+    /// </summary>
+    public interface IAgentParameters
+    {
+        /// <summary>
+        /// Get SNMP version number.
+        /// </summary>
+        SnmpVersion Version
+        {
+            get;
+        }
 
-		/// <summary>
-		/// Check validity of the agent properties object.
-		/// </summary>
-		/// <returns>true if object has all the information needed, otherwise false.</returns>
-		bool Valid();
+        /// <summary>
+        /// Check validity of the agent properties object.
+        /// </summary>
+        /// <returns>true if object has all the information needed, otherwise false.</returns>
+        bool Valid();
 
-		/// <summary>
-		/// Initialize SNMP packet class with values contained in this class.
-		/// </summary>
-		/// <param name="packet">SNMP packet class</param>
-		void InitializePacket(SnmpPacket packet);
+        /// <summary>
+        /// Initialize SNMP packet class with values contained in this class.
+        /// </summary>
+        /// <param name="packet">SNMP packet class</param>
+        void InitializePacket(SnmpPacket packet);
 
-		/// <summary>
-		/// Duplicate object
-		/// </summary>
-		/// <returns>Cloned copy of the object</returns>
-		object Clone();
-	}
+        /// <summary>
+        /// Duplicate object
+        /// </summary>
+        /// <returns>Cloned copy of the object</returns>
+        object Clone();
+    }
 }

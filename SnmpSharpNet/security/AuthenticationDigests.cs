@@ -16,22 +16,22 @@
 
 namespace SnmpSharpNet
 {
-	/// <summary>
-	/// Enumeration of available authentication digests
-	/// </summary>
-	public enum AuthenticationDigests
-	{
-		/// <summary>
-		/// Authentication hash method none. Used when authentication is disabled.
-		/// </summary>
-		None = 0,
-		/// <summary>
-		/// Authentication protocol is HMAC-MD5.
-		/// </summary>
-		MD5,
-		/// <summary>
-		/// Authentication protocol is HMAC-SHA1.
-		/// </summary>
-		SHA1
-	}
+    /// <summary>
+    /// Enumeration of available authentication digests
+    /// </summary>
+    public enum AuthenticationDigests
+    {
+        /// <summary>
+        /// Authentication hash method none. Used when authentication is disabled.
+        /// </summary>
+        None = 0,
+        /// <summary>
+        /// Authentication protocol is HMAC-MD5.
+        /// </summary>
+        MD5,
+        /// <summary>
+        /// Authentication protocol is HMAC-SHA1.
+        /// </summary>
+        SHA1
+    }
 }

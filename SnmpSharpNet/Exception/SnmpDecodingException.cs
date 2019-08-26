@@ -16,18 +16,18 @@
 
 namespace SnmpSharpNet
 {
-	/// <summary>
-	/// Exception thrown on failure to decode BER encoded information.
-	/// </summary>
-	public class SnmpDecodingException : SnmpException
-	{
-		/// <summary>
-		/// standard constructor
-		/// </summary>
-		/// <param name="msg">exception message</param>
-		public SnmpDecodingException(string msg)
-			: base(msg)
-		{
-		}
-	}
+    /// <summary>
+    /// Exception thrown on failure to decode BER encoded information.
+    /// </summary>
+    public class SnmpDecodingException : SnmpException
+    {
+        /// <summary>
+        /// standard constructor
+        /// </summary>
+        /// <param name="msg">exception message</param>
+        public SnmpDecodingException(string msg)
+            : base(msg)
+        {
+        }
+    }
 }

@@ -21,14 +21,6 @@ using System.Threading.Tasks;
 
 namespace SnmpSharpNet
 {
-    /// <summary>
-    /// Callback used to pass result of an async SNMP operation back to the caller.
-    /// </summary>
-    /// <param name="result">Result code of the operation.</param>
-    /// <param name="packet">SNMP packet received</param>
-    public delegate void SnmpAsyncResponse(AsyncRequestResult result, SnmpPacket packet);
-
-
     /// <summary>Transport class for IPv4 using UDP</summary>
     /// <remarks>
     /// InternetProtocol version 4 User Datagram Protocol (IP/UDP) transport protocol
@@ -62,10 +54,10 @@ namespace SnmpSharpNet
             set
             {
                 _address = value;
-                if (_address.AddressFamily == AddressFamily.InterNetworkV6 && !base.IsIPv6)
-                    base.initSocket(true);
-                else if (_address.AddressFamily == AddressFamily.InterNetwork && base.IsIPv6)
-                    base.initSocket(false);
+                if (_address.AddressFamily == AddressFamily.InterNetworkV6 && !IsIPv6)
+                    initSocket(true);
+                else if (_address.AddressFamily == AddressFamily.InterNetwork && IsIPv6)
+                    initSocket(false);
             }
         }
         /// <summary>
@@ -200,7 +192,7 @@ namespace SnmpSharpNet
                 throw new SnmpInvalidVersionException("Unsupported SNMP version.");
             }
 
-            byte[] inBuffer = base.Request(_address, _port, outPacket, outPacket.Length, _timeout, _retry);
+            byte[] inBuffer = Request(_address, _port, outPacket, outPacket.Length, _timeout, _retry);
 
             if (inBuffer == null || inBuffer.Length <= 0)
             {
@@ -273,35 +265,35 @@ namespace SnmpSharpNet
         }
 
         /// <summary>Make SNMP Request</summary>
-        /// <remarks>
-        /// Make SNMP request. With this method you can make blocked SNMP version 1, 2 and 3 requests of type GET,
-        /// GET-NEXT, GET-BULK, SET and REPORT (request types have to compatible with the SNMP protocol version you
-        /// are using).
-        /// 
-        /// This method will pass through any exceptions thrown by parsing classes/methods so see individual packet
-        /// classes, ASN.1 type classes, authentication, privacy, etc. classes for exceptions thrown.
-        /// </remarks>
-        /// <param name="pdu">Pdu class (do not pass ScopedPdu)</param>
-        /// <param name="agentParameters">Security information for the request. Use <see cref="AgentParameters"/>
-        /// for SNMP versions 1 and 2 requests. Use <see cref="SecureAgentParameters"/> for SNMP version 3
-        /// requests.</param>
-        /// <returns>Appropriate SNMP packet class for the reply received (<see cref="SnmpV1Packet"/>, 
-        /// <see cref="SnmpV2Packet"/>, or <see cref="SnmpV3Packet"/>. Null value if there was an error
-        /// with the request.</returns>
-        /// <exception cref="SnmpAuthenticationException">Thrown on SNMPv3 requests when authentication password
-        /// is not specified on authNoPriv or authPriv requests in SecureAgentParameters or if incoming packet 
-        /// authentication check failed.
-        /// 
-        /// With SNMP ver1 and ver2c, authentication check fails when invalid community name is parsed in the reply.</exception>
-        /// <exception cref="SnmpPrivacyException">Thrown on SNMPv3 requests when privacy password is not
-        /// specified in SecureAgentParameters on authPriv requests.</exception>
-        /// <exception cref="SnmpException">Thrown in following cases:
-        /// 
-        /// * IAgentParameters.Valid() returned false. SnmpException.ErrorCode is set to SnmpException.InvalidIAgentParameters
-        /// * No data received on request. SnmpException.ErrorCode is set to SnmpException.NoDataReceived
-        /// * Invalid RequestId in reply. SnmpException.ErrorCode is set to SnmpException.InvalidRequestId
-        /// </exception>
-        public async Task<SnmpPacket> RequestAsync(Pdu pdu, IAgentParameters agentParameters)
+		/// <remarks>
+		/// Make SNMP request. With this method you can make blocked SNMP version 1, 2 and 3 requests of type GET,
+		/// GET-NEXT, GET-BULK, SET and REPORT (request types have to compatible with the SNMP protocol version you
+		/// are using).
+		/// 
+		/// This method will pass through any exceptions thrown by parsing classes/methods so see individual packet
+		/// classes, ASN.1 type classes, authentication, privacy, etc. classes for exceptions thrown.
+		/// </remarks>
+		/// <param name="pdu">Pdu class (do not pass ScopedPdu)</param>
+		/// <param name="agentParameters">Security information for the request. Use <see cref="AgentParameters"/>
+		/// for SNMP versions 1 and 2 requests. Use <see cref="SecureAgentParameters"/> for SNMP version 3
+		/// requests.</param>
+		/// <returns>Appropriate SNMP packet class for the reply received (<see cref="SnmpV1Packet"/>, 
+		/// <see cref="SnmpV2Packet"/>, or <see cref="SnmpV3Packet"/>. Null value if there was an error
+		/// with the request.</returns>
+		/// <exception cref="SnmpAuthenticationException">Thrown on SNMPv3 requests when authentication password
+		/// is not specified on authNoPriv or authPriv requests in SecureAgentParameters or if incoming packet 
+		/// authentication check failed.
+		/// 
+		/// With SNMP ver1 and ver2c, authentication check fails when invalid community name is parsed in the reply.</exception>
+		/// <exception cref="SnmpPrivacyException">Thrown on SNMPv3 requests when privacy password is not
+		/// specified in SecureAgentParameters on authPriv requests.</exception>
+		/// <exception cref="SnmpException">Thrown in following cases:
+		/// 
+		/// * IAgentParameters.Valid() returned false. SnmpException.ErrorCode is set to SnmpException.InvalidIAgentParameters
+		/// * No data received on request. SnmpException.ErrorCode is set to SnmpException.NoDataReceived
+		/// * Invalid RequestId in reply. SnmpException.ErrorCode is set to SnmpException.InvalidRequestId
+		/// </exception>
+		public async Task<SnmpPacket> RequestAsync(Pdu pdu, IAgentParameters agentParameters)
         {
             byte[] outPacket;
             if (agentParameters.Version == SnmpVersion.Ver3)
@@ -347,7 +339,7 @@ namespace SnmpSharpNet
                 throw new SnmpInvalidVersionException("Unsupported SNMP version.");
             }
 
-            byte[] inBuffer = await base.RequestAsync(_address, _port, outPacket, outPacket.Length, _timeout, _retry);
+            byte[] inBuffer = await RequestAsync(_address, _port, outPacket, outPacket.Length, _timeout, _retry);
 
             if (inBuffer == null || inBuffer.Length <= 0)
             {

@@ -16,52 +16,52 @@
 
 namespace SnmpSharpNet
 {
-	/// <summary>Privacy protocol helper class.</summary>
-	/// <remarks>
-	/// This class is used to define privacy protocol encryption type in other
-	/// classes using integer constants representing each protocol supported, and allows for easy instantiation
-	/// of privacy protocol when used for encryption or decryption of data in a encryption method independent way.
-	/// 
-	/// Example of how to use this class:
-	/// <code>
-	/// int myPrivacyProtocol = PrivacyProtocol.AES128;
-	/// 
-	/// IPrivacyProtocol privacyImplementation = PrivacyProtocol.GetInstance(myPrivacyProtocol);
-	/// byte[] result = privacyImplementation.Encrypt(....);
-	/// </code>
-	/// </remarks>
-	public sealed class PrivacyProtocol
-	{
-		/// <summary>
-		/// Based on the supplied privacyProtocol, return instance of the privacy protocol implementation class.
-		/// </summary>
-		/// <param name="privProtocol">Privacy protocol code. Available protocols are <see cref="PrivacyProtocols.DES"/>, 
-		/// <see cref="PrivacyProtocols.AES128"/>, <see cref="PrivacyProtocols.AES192"/>, <see cref="PrivacyProtocols.AES256"/> and
-		/// <see cref="PrivacyProtocols.TripleDES"/>.</param>
-		/// <returns>Privacy protocol implementation class on success. If privacy protocol is <see cref="PrivacyProtocols.None"/>
-		/// then null is returned.</returns>
-		public static IPrivacyProtocol GetInstance(PrivacyProtocols privProtocol)
-		{
-			if (privProtocol == PrivacyProtocols.None)
-				return null;
-			else if (privProtocol == PrivacyProtocols.DES)
-				return new PrivacyDES();
-			else if (privProtocol == PrivacyProtocols.AES128)
-				return new PrivacyAES128();
-			else if (privProtocol == PrivacyProtocols.AES192)
-				return new PrivacyAES192();
-			else if (privProtocol == PrivacyProtocols.AES256)
-				return new PrivacyAES256();
-			else if (privProtocol == PrivacyProtocols.TripleDES)
-				return new Privacy3DES();
-			return null;
-		}
+    /// <summary>Privacy protocol helper class.</summary>
+    /// <remarks>
+    /// This class is used to define privacy protocol encryption type in other
+    /// classes using integer constants representing each protocol supported, and allows for easy instantiation
+    /// of privacy protocol when used for encryption or decryption of data in a encryption method independent way.
+    /// 
+    /// Example of how to use this class:
+    /// <code>
+    /// int myPrivacyProtocol = PrivacyProtocol.AES128;
+    /// 
+    /// IPrivacyProtocol privacyImplementation = PrivacyProtocol.GetInstance(myPrivacyProtocol);
+    /// byte[] result = privacyImplementation.Encrypt(....);
+    /// </code>
+    /// </remarks>
+    public sealed class PrivacyProtocol
+    {
+        /// <summary>
+        /// Based on the supplied privacyProtocol, return instance of the privacy protocol implementation class.
+        /// </summary>
+        /// <param name="privProtocol">Privacy protocol code. Available protocols are <see cref="PrivacyProtocols.DES"/>, 
+        /// <see cref="PrivacyProtocols.AES128"/>, <see cref="PrivacyProtocols.AES192"/>, <see cref="PrivacyProtocols.AES256"/> and
+        /// <see cref="PrivacyProtocols.TripleDES"/>.</param>
+        /// <returns>Privacy protocol implementation class on success. If privacy protocol is <see cref="PrivacyProtocols.None"/>
+        /// then null is returned.</returns>
+        public static IPrivacyProtocol GetInstance(PrivacyProtocols privProtocol)
+        {
+            if (privProtocol == PrivacyProtocols.None)
+                return null;
+            else if (privProtocol == PrivacyProtocols.DES)
+                return new PrivacyDES();
+            else if (privProtocol == PrivacyProtocols.AES128)
+                return new PrivacyAES128();
+            else if (privProtocol == PrivacyProtocols.AES192)
+                return new PrivacyAES192();
+            else if (privProtocol == PrivacyProtocols.AES256)
+                return new PrivacyAES256();
+            else if (privProtocol == PrivacyProtocols.TripleDES)
+                return new Privacy3DES();
+            return null;
+        }
 
-		/// <summary>
-		/// Private constructor. This class cannot be instantiated.
-		/// </summary>
-		private PrivacyProtocol()
-		{
-		}
-	}
+        /// <summary>
+        /// Private constructor. This class cannot be instantiated.
+        /// </summary>
+        private PrivacyProtocol()
+        {
+        }
+    }
 }

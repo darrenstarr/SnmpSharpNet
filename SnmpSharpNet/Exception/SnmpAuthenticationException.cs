@@ -16,19 +16,19 @@
 
 namespace SnmpSharpNet
 {
-	/// <summary>
-	/// Exception of this type is thrown when SNMP version 3 packet containing authentication information
-	/// has failed authentication check.
-	/// </summary>
-	public class SnmpAuthenticationException: SnmpException
-	{
-		/// <summary>
-		/// Standard constructor.
-		/// </summary>
-		/// <param name="msg">Error message</param>
-		public SnmpAuthenticationException(string msg)
-			: base(msg)
-		{
-		}
-	}
+    /// <summary>
+    /// Exception of this type is thrown when SNMP version 3 packet containing authentication information
+    /// has failed authentication check.
+    /// </summary>
+    public class SnmpAuthenticationException: SnmpException
+    {
+        /// <summary>
+        /// Standard constructor.
+        /// </summary>
+        /// <param name="msg">Error message</param>
+        public SnmpAuthenticationException(string msg)
+            : base(msg)
+        {
+        }
+    }
 }
